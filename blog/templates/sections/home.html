@@ -1,0 +1,22 @@
+{% extends "sections/base.html" %}
+{% block title %}Inicio - Mi Portafolio{% endblock %}
+
+{% block content %}
+<header class="row bg-black align-items-center vh-100 m-0">
+    <div class="col-md-4 text-center">
+        <img src="{{ information.image_profile.url }}" alt="{{ information.name }}" 
+             class="img-fluid rounded-circle mb-3 animate-img" style="max-width: 350px; height: auto;">
+    </div>
+
+    <div class="col-md-8 text-center text-md-start">
+        <h1 class="animate-fade-in">Hola, soy <strong>{{ information.name }}</strong>, Bienvenidos a mi blog</h1>
+        <br>
+        <h3 class="animate-fade-in">Me desempeño como {{ information.role }}</h3>
+        <br>
+        <p class="animate-fade-in" style="font-size: 1.1rem;">{{ information.bio }}</p>
+        <a href="{{ information.cv_pdf.url }}" class="btn btn-primary btn-lg rounded-0 my-3 animate-btn">
+            Ver Hoja de Vida
+        </a>
+    </div>
+</header>
+{% endblock %}

@@ -1,12 +1,12 @@
 from django.shortcuts import render
+from .models import Profile
+
 
 # Create your views here.
 
 def home(request):
-    return render(request, 'sections/home.html')
-
-def about(request):
-    return render(request, 'sections/about.html')
+    information = Profile.objects.first()
+    return render(request, 'sections/home.html', {'information': information})
 
 def projects(request):
     return render(request, 'sections/projects.html')
@@ -14,8 +14,8 @@ def projects(request):
 def studies(request):
     return render(request, 'sections/studies.html')
 
-def posts(request):
-    return render(request, 'sections/posts.html')
+def hability(request):
+    return render(request, 'sections/hability.html')
 
 def contact(request):
     return render(request, 'sections/contact.html')
